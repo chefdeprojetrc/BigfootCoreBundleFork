@@ -10,7 +10,7 @@ class BigfootScriptHandler34 extends ScriptHandler
     public static function clearCache(Event $event)
     {
         $options = self::getOptions($event);
-        $appDir = $options['symfony-app-dir'];
+        $appDir = $options['symfony-bin-dir'];
 
         if (!is_dir($appDir)) {
             echo 'The symfony-app-dir ('.$appDir.') specified in composer.json was not found in '.getcwd().', can not clear the cache.'.PHP_EOL;
@@ -31,8 +31,8 @@ class BigfootScriptHandler34 extends ScriptHandler
     public static function installAssets(Event $event)
     {
         $options = self::getOptions($event);
-        $appDir = $options['symfony-app-dir'];
         $webDir = $options['symfony-web-dir'];
+        $appDir = $options['symfony-bin-dir'];
 
         $symlink = '';
         if ($options['symfony-assets-install'] == 'symlink') {
