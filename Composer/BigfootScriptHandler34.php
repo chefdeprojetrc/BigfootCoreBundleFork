@@ -31,8 +31,8 @@ class BigfootScriptHandler34 extends ScriptHandler
     public static function installAssets(Event $event)
     {
         $options = self::getOptions($event);
-        $appDir = $options['symfony-bin-dir'];
         $webDir = $options['symfony-web-dir'];
+        $appDir = $options['symfony-bin-dir'];
 
         $symlink = '';
         if ($options['symfony-assets-install'] == 'symlink') {
